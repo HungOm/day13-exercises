@@ -57,14 +57,38 @@ end
 # ===================================================
 
 
-def vowels_counts(string_)
-    string = string_.downcase
-    string = string.scan(/[aeiou]/)
+def vowel_counts(string)
+    string1 = string.downcase
+    string2 = string1.scan(/[aeiou]/)
     
     vowels =Hash.new(0)
-    for i in string do 
+    for i in string2 do 
         count = 1 
         vowels[i.downcase] += count
     end
     return vowels
 end
+# puts vowel_counts("code bootcamp") == {"o"=>3, "e"=>1, "a"=>1}
+
+
+# ====================================
+def caesar_cipher(string, shift_factor)
+    alphabets = Array('a'..'z')
+    new_string = ""
+    new_arr=[]
+    my_string = string.scan(/./)
+    for i in my_string do
+        if alphabets.include?(i.downcase)
+            shift_factor.times do
+                i = i.next
+                
+            end
+        end
+        # use the last index to make sure only one item from each iteration is added
+        # Note -- from the first iteration it is return two items namely -AB
+        new_arr<<i[-1]
+    end
+    new_arr.join('')
+end
+
+# ======================
