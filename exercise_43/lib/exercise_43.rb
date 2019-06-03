@@ -53,3 +53,18 @@ def hipsterfy(word)
 end
 
 # hipsterfy("Hey I am good")
+
+# ===================================================
+
+
+def vowels_counts(string_)
+    string = string_.downcase
+    string = string.scan(/[aeiou]/)
+    
+    vowels =Hash.new(0)
+    for i in string do 
+        count = 1 
+        vowels[i.downcase] += count
+    end
+    return vowels
+end
