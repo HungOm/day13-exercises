@@ -86,24 +86,20 @@ def substrings(string)
         n=1
         puts i
         if i ==0||i==1
-            substring_arr<<st_arr[i]
-        end
-        # puts substring_arr
-        if n < i
-            # while n<i
-            #     char_string<<st_arr[i+n],
-            #     n +=1
-            # end
             char_string<<st_arr[i]
-            for j in i..st_arr.size 
-                puts " jjj#{j}"
-                char_string<<st_arr[i+j]
-            end
-            puts " iii#{i}"
         end
+        puts "#{substring_arr.join('')}"
+        
+        char_string<<st_arr[i]
+        for j in i..st_arr.size 
+            puts " jjj#{j}"
+            char_string<<st_arr[i+j]
+        end
+        puts " iii#{i}"
+        
         substring_arr<<char_string
     end
-    puts substring_arr
+    puts substring_arr.join('')
         
 
 
