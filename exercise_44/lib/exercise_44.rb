@@ -79,7 +79,6 @@ end
 # ======================
 
 def substrings(string)
-<<<<<<< HEAD
 
     final_array = []
     (string.length).times do |str|
@@ -91,30 +90,6 @@ def substrings(string)
 end
 
 # substrings("jump")
-=======
-    st_arr=string.split('')
-    substring_arr=[]
-    (0..st_arr.size).each do |i|
-        char_string=''
-        n=1
-        puts i
-        if i ==0||i==1
-            char_string<<st_arr[i]
-        end
-        puts "#{substring_arr.join('')}"
-        
-        char_string<<st_arr[i]
-        for j in i..st_arr.size 
-            puts " jjj#{j}"
-            char_string<<st_arr[i+j]
-        end
-        puts " iii#{i}"
-        
-        substring_arr<<char_string
-    end
-    puts substring_arr.join('')
-        
->>>>>>> 14ebacc0875d26f211ad9a8ae3f868203004ca25
 
 # ==========================
 
