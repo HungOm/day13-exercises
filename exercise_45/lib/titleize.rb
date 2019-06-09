@@ -8,16 +8,16 @@ require "byebug"
 
 little_words = [ "and", "the", "over", "a", "on", "of" ]
 
-def titleize(title)
+def titleize(title,little_words)
   words = title.split(" ")
-
-  titleized_words = words.map.with_index do |i, word|
-    if i == 0 || !little_words.include?(word)
+  titleized_words = words.map.with_index do |word,index|
+    if index ==0 ||!little_words.include?(word)
       word.capitalize
     else
       word.downcase
     end
   end
 
-  titleized_words.join(" ")
+  return titleized_words.join(" ")
 end
+# p titleize("romeo and juliet",little_words)

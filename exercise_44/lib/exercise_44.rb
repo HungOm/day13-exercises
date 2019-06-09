@@ -79,36 +79,37 @@ end
 # ======================
 
 def substrings(string)
-    st_arr=string.split('')
-    substring_arr=[]
-    (0..st_arr.size).each do |i|
-        char_string=''
-        n=1
-        puts i
-        if i ==0||i==1
-            substring_arr<<st_arr[i]
+
+    final_array = []
+    (string.length).times do |str|
+        (str..string.length-1).each do |newstr|
+            final_array<<string[str..newstr]
         end
-        # puts substring_arr
-        if n < i
-            # while n<i
-            #     char_string<<st_arr[i+n],
-            #     n +=1
-            # end
-            char_string<<st_arr[i]
-            for j in i..st_arr.size 
-                puts " jjj#{j}"
-                char_string<<st_arr[i+j]
-            end
-            puts " iii#{i}"
-        end
-        substring_arr<<char_string
     end
-    puts substring_arr
-        
-
-
+    final_array
 end
 
-substrings("jump")
+# substrings("jump")
+
+# ==========================
+
+
+def palindrome_substrings(string)
+    pal_sbstr=[]
+    #convert string into sub string 
+    # to chech each combination if they are palindrome
+    # use the substirng mehtods defined ealier
+    substr =substrings(string)
+    substr.each do |str|
+        # call the palindrome checker method defined ealier
+        # exampt the a word in aplindrom
+        if palindrome?(str) && str.length > 1
+            pal_sbstr<<str
+        end
+    end
+    pal_sbstr
+end
+
+puts palindrome_substrings("abracadabra")
 
 
